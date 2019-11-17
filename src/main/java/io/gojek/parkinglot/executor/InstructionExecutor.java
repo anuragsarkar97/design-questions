@@ -3,20 +3,19 @@ package io.gojek.parkinglot.executor;
 import io.gojek.parkinglot.models.ParkingLot;
 import io.gojek.parkinglot.models.enums.InstructionType;
 import io.gojek.parkinglot.service.ParkingLotService;
-import io.gojek.parkinglot.service.impl.ParkingIntiliazeService;
-import io.gojek.parkinglot.validator.ValidationInterface;
+import io.gojek.parkinglot.service.impl.ParkingInitializeService;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
 public class InstructionExecutor implements ExecutorInterface<BufferedReader,Void> {
 
-    ParkingLotService parkingInitializeService = new ParkingIntiliazeService();
+    ParkingLotService parkingInitializeService = new ParkingInitializeService();
 
     ParkingLot parkingLot = null;
 
     public Void execute(BufferedReader bufferReader) {
-        Integer lineNumer = 0;
+        Integer lineNumber = 0;
         try {
             String instruction;
             while ((instruction = bufferReader.readLine()) != null) {
