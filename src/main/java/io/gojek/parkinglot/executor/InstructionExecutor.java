@@ -7,6 +7,7 @@ import io.gojek.parkinglot.service.impl.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.HashMap;
 
 public class InstructionExecutor implements ExecutorInterface<BufferedReader, Void> {
 
@@ -15,11 +16,23 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
     ParkingLotService parkingStatusService = new ParkingStatusService();
     ParkingLotService parkingInformationService = new ParkingInformationService();
     ParkingLotService parkingDeallocatorService = new ParkingDeallocatorService();
+    private  HashMap<InstructionType, ParkingLotService> serviceMap = new HashMap<InstructionType, ParkingLotService>();
+
+
 
     ParkingLot parkingLot = null;
 
     public Void execute(BufferedReader bufferReader) {
         Integer lineNumber = 0;
+        serviceMap.put(InstructionType.PARK, parkingAllocatorService);
+        serviceMap.put(InstructionType.STATUS, parkingStatusService);
+        serviceMap.put(InstructionType.SLOT_NUMBER_FOR_CARS_WITH_COLOR, parkingInformationService);
+        serviceMap.put(InstructionType.SLOT_NUMBER_FOR_REGISTRATION_NUMBER, parkingInformationService);
+        serviceMap.put(InstructionType.REGISTRATION_NUMBER_FOR_CARS_WITH_COLOR, parkingInformationService);
+        serviceMap.put(InstructionType.LEAVE, parkingDeallocatorService);
+
+
+
         try {
             String instruction;
             while ((instruction = bufferReader.readLine()) != null) {
@@ -27,29 +40,15 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
                 String command = parts[0];
                 if (InstructionType.getInstructionByValue(command).equals(InstructionType.CREATE)) {
                     parkingLot = (ParkingLot) parkingInitializeService.executeInstruction(parts);
-                } else if (InstructionType.getInstructionByValue(command).equals(InstructionType.PARK)) {
-
-                    parkingAllocatorService.executeInstruction(parkingLot, parts);
-
-                } else if (InstructionType.getInstructionByValue(command).equals(InstructionType.STATUS)) {
-                    parkingStatusService.executeInstruction(parkingLot, parts);
-                } else if (InstructionType.getInstructionByValue(command).equals(InstructionType.SLOT_NUMBER_FOR_CARS_WITH_COLOR)) {
-                    parkingInformationService.executeInstruction(parkingLot, parts);
-                } else if (InstructionType.getInstructionByValue(command).equals(InstructionType.SLOT_NUMBER_FOR_REGISTRATION_NUMBER)) {
-                    parkingInformationService.executeInstruction(parkingLot, parts);
-                } else if (InstructionType.getInstructionByValue(command).equals(InstructionType.REGISTRATION_NUMBER_FOR_CARS_WITH_COLOR)) {
-                    parkingInformationService.executeInstruction(parkingLot, parts);
-                } else if (InstructionType.getInstructionByValue(command).equals(InstructionType.LEAVE)) {
-                    parkingDeallocatorService.executeInstruction(parkingLot, parts);
-                } else if(InstructionType.getInstructionByValue(command).equals(InstructionType.EXIT)) {
+                }
+                else if (serviceMap.containsKey(InstructionType.getInstructionByValue(command))) {
+                    serviceMap.get(InstructionType.getInstructionByValue(command)).executeInstruction(parkingLot,parts);
+                }
+                else if(InstructionType.getInstructionByValue(command).equals(InstructionType.EXIT)) {
                     break;
                 }
-
-                // TODO:: Write other else if nd throw  exception
                 else {
                     System.out.println("Invalid Command found");
-                    // TODO: Throw exceptoip
-
                 }
             }
         } catch (IOException e) {
