@@ -1,0 +1,43 @@
+package io.gojek.parkinglot.executor;
+
+import io.gojek.parkinglot.models.ParkingLot;
+import io.gojek.parkinglot.models.enums.InstructionType;
+import io.gojek.parkinglot.service.ParkingLotService;
+import io.gojek.parkinglot.service.impl.ParkingIntiliazeService;
+import io.gojek.parkinglot.validator.ValidationInterface;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+
+public class InstructionExecutor implements ExecutorInterface<BufferedReader,Void> {
+
+    ParkingLotService parkingInitializeService = new ParkingIntiliazeService();
+
+    ParkingLot parkingLot = null;
+
+    public Void execute(BufferedReader bufferReader) {
+        Integer lineNumer = 0;
+        try {
+            String instruction;
+            while ((instruction = bufferReader.readLine()) != null) {
+                String[] parts = instruction.trim().split(" ");
+                String command = parts[0];
+                    if (InstructionType.getInstructionByValue(command).equals(InstructionType.CREATE)) {
+                         parkingLot = (ParkingLot) parkingInitializeService.executeInstruction(parts);
+                    }
+                    // TODO:: Write other else if nd throw  exception
+                    else {
+                        // TODO: Throw exceptoip
+                    }
+
+
+
+
+
+            }
+        } catch (IOException e) {
+
+        }
+        return null;
+    }
+}
