@@ -4,16 +4,16 @@ import io.gojek.parkinglot.models.enums.Color;
 
 public abstract class Vehicle {
 
-    private String registrationNuimber;
+    private String registrationNumber;
 
     private Color color;
 
-    public String getRegistrationNuimber() {
-        return registrationNuimber;
+    public String getRegistrationNumber() {
+        return registrationNumber;
     }
 
-    public void setRegistrationNuimber(String registrationNuimber) {
-        this.registrationNuimber = registrationNuimber;
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
     }
 
     public Color getColor() {
@@ -21,6 +21,11 @@ public abstract class Vehicle {
     }
 
     public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public Vehicle(String registrationNumber, Color color) {
+        this.registrationNumber = registrationNumber;
         this.color = color;
     }
 }
