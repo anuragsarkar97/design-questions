@@ -33,7 +33,7 @@ public class ParkingLot {
     }
 
     public ParkingLot() {
-        Slot[] array = new Slot[1];
+        Slot[] array = new Slot[0];
         this.slots= Arrays.asList(array);
         this.colorSegmentMap = new HashMap<Color, Map<String, Integer>>();
         for(Color color: Color.values()) {

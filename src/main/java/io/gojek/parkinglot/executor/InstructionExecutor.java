@@ -4,6 +4,8 @@ import io.gojek.parkinglot.models.ParkingLot;
 import io.gojek.parkinglot.models.enums.InstructionType;
 import io.gojek.parkinglot.service.ParkingLotService;
 import io.gojek.parkinglot.service.impl.*;
+import io.gojek.parkinglot.validator.ValidationInterface;
+import io.gojek.parkinglot.validator.impl.InstructionValidator;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,6 +13,7 @@ import java.util.HashMap;
 
 public class InstructionExecutor implements ExecutorInterface<BufferedReader, Void> {
 
+    ValidationInterface instructionValidator = new InstructionValidator();
     ParkingLotService parkingInitializeService = new ParkingInitializeService();
     ParkingLotService parkingAllocatorService = new ParkingAllocatorService();
     ParkingLotService parkingStatusService = new ParkingStatusService();
@@ -39,7 +42,10 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
             while ((instruction = bufferReader.readLine()) != null) {
                 String[] parts = instruction.trim().split(" ");
                 String command = parts[0];
-                if (serviceMap.containsKey(InstructionType.getInstructionByValue(command))) {
+                if (instructionValidator.validate(parkingLot, parts).equals(false)) {
+                    continue;
+                }
+                else if (serviceMap.containsKey(InstructionType.getInstructionByValue(command))) {
                     serviceMap.get(InstructionType.getInstructionByValue(command)).executeInstruction(parkingLot, parts);
                 }
                 else if(InstructionType.getInstructionByValue(command).equals(InstructionType.EXIT)) {

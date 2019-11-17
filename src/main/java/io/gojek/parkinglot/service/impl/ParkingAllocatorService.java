@@ -13,12 +13,14 @@ public class ParkingAllocatorService implements ParkingLotService<Void, String> 
 
 
     public Void executeInstruction(ParkingLot parkingLot, String... argument) {
-
         Boolean slotFound = false;
         Color vehicleColor = Color.valueOf(argument[2]);
         String registrationNumber = argument[1];
         Car car = new Car(registrationNumber, vehicleColor);
         List<Slot> slots = parkingLot.getSlots();
+        if (slots.size() == 0) {
+            System.out.println("Please initialize parking lot");
+        }
         for (int i = 0; i < slots.size(); i++) {
             Slot slot = slots.get(i);
             if (SlotStatus.FREE.equals(slot.getStatus())) {
