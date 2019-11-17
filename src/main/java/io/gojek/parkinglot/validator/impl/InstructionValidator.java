@@ -8,7 +8,6 @@ import java.util.logging.Logger;
 
 public class InstructionValidator implements ValidationInterface<String, Integer, Boolean> {
 
-    Logger logger = Logger.getLogger(InstructionValidator.class.getName());
 
     public Integer validate(String instruction) {
         return null;

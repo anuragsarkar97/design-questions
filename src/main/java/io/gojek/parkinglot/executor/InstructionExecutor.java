@@ -32,7 +32,6 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
         serviceMap.put(InstructionType.CREATE, parkingInitializeService);
 
 
-
         try {
             String instruction;
             ParkingLot parkingLot = new ParkingLot();

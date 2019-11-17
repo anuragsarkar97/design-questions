@@ -3,11 +3,8 @@ package io.gojek.parkinglot.service.impl;
 import io.gojek.parkinglot.models.ParkingLot;
 import io.gojek.parkinglot.service.ParkingLotService;
 
-import java.util.logging.Logger;
-
 public class ParkingInitializeService implements ParkingLotService<Void, String> {
 
-    Logger logger = Logger.getLogger(ParkingInitializeService.class.getName());
 
     public Void executeInstruction(ParkingLot parkingLot, String... argument) {
         if (argument.length != 2) {

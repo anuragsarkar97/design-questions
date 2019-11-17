@@ -8,12 +8,9 @@ import io.gojek.parkinglot.models.enums.SlotStatus;
 import io.gojek.parkinglot.service.ParkingLotService;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ParkingAllocatorService implements ParkingLotService<Void, String> {
 
-    private Logger logger = Logger.getLogger(ParkingAllocatorService.class.getName());
 
     public Void executeInstruction(ParkingLot parkingLot, String... argument) {
 
@@ -29,7 +26,7 @@ public class ParkingAllocatorService implements ParkingLotService<Void, String> 
                 slot.setVehicle(car);
                 parkingLot.getColorSegmentMap().get(vehicleColor).put(registrationNumber, i);
                 System.out.println("Allocated slot number: " + (i + 1));
-                slotFound= true;
+                slotFound = true;
                 break;
             }
         }
