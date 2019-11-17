@@ -22,9 +22,14 @@ public class ParkingLot {
 
     public ParkingLot(int parkingLotSize) {
         Slot[] array = new Slot[parkingLotSize];
-        Arrays.fill(array,0, parkingLotSize,new Slot());
+        for (int i = 0; i< parkingLotSize; i++ ) {
+            array[i] = new Slot();
+        }
         this.slots= Arrays.asList(array);
         this.colorSegmentMap = new HashMap<Color, Map<String, Integer>>();
+        for(Color color: Color.values()) {
+            this.colorSegmentMap.put(color, new HashMap<String, Integer>());
+        }
     }
 
     public Map<Color, Map<String, Integer>> getColorSegmentMap() {
