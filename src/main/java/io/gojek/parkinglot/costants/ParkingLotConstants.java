@@ -10,4 +10,6 @@ public class ParkingLotConstants {
         statusHeaders.add("Registration No");
         statusHeaders.add("Color");
     }
+    public static String FILE_NOT_FOUND = "File not found";
+    public static String EXCEPTION_OCCURRED = "Exception raised with : {}";
 }
