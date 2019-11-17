@@ -38,15 +38,10 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader,Voi
                     }
                     // TODO:: Write other else if nd throw  exception
                     else {
-
                         System.out.println("Invalid Command found");
                         // TODO: Throw exceptoip
+
                     }
-
-
-
-
-
             }
         } catch (IOException e) {
 
