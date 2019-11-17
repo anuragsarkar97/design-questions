@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Parking lot class
  * has : list of slots
- * has : map with key color and value as map : key-> registration number to value-> slot number
+ * has : color to registration number to slot number
  */
 public class ParkingLot {
 
