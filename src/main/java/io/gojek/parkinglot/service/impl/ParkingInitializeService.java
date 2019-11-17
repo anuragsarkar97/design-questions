@@ -9,7 +9,7 @@ public class ParkingInitializeService implements ParkingLotService<ParkingLot, S
 
     Logger logger = Logger.getLogger(ParkingInitializeService.class.getName());
 
-    public ParkingLot executeInstruction(String argument) {
+    public ParkingLot executeInstruction(ParkingLot parkingLot, String... argument) {
         return null;
     }
 
