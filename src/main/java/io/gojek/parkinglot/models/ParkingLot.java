@@ -19,13 +19,11 @@ public class ParkingLot {
 
     private List<Slot> slots;
     private Map<Color, Map<String, Integer>> colorSegmentMap;
-    private Map<String, Integer> registrationSlotMap;
 
     public ParkingLot(int parkingLotSize) {
         Slot[] array = new Slot[parkingLotSize];
         Arrays.fill(array,0, parkingLotSize,new Slot());
         this.slots= Arrays.asList(array);
-        this.registrationSlotMap = new HashMap<String, Integer>();
         this.colorSegmentMap = new HashMap<Color, Map<String, Integer>>();
     }
 
@@ -35,14 +33,6 @@ public class ParkingLot {
 
     public void setColorSegmentMap(Map<Color, Map<String, Integer>> colorSegmentMap) {
         this.colorSegmentMap = colorSegmentMap;
-    }
-
-    public Map<String, Integer> getRegistrationSlotMap() {
-        return registrationSlotMap;
-    }
-
-    public void setRegistrationSlotMap(Map<String, Integer> registrationSlotMap) {
-        this.registrationSlotMap = registrationSlotMap;
     }
 
     public List<Slot> getSlots() {
@@ -58,7 +48,6 @@ public class ParkingLot {
         return "ParkingLot{" +
                 "slots=" + slots +
                 ", colorSegmentMap=" + colorSegmentMap +
-                ", registrationSlotMap=" + registrationSlotMap +
                 '}';
     }
 }
