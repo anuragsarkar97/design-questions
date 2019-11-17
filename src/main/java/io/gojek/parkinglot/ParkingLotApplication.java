@@ -30,6 +30,7 @@ public class ParkingLotApplication {
 
         } catch (Exception e) {
             System.out.println("exception");
+            e.printStackTrace();
             //TODO: check and remove throws exception in instruction executor
         }
 
