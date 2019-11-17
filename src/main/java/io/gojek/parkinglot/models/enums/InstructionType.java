@@ -10,7 +10,8 @@ public enum InstructionType {
     SLOT_NUMBER_FOR_CARS_WITH_COLOR("slot_numbers_for_cars_with_colour"),
     SLOT_NUMBER_FOR_REGISTRATION_NUMBER("slot_number_for_registration_number"),
     REGISTRATION_NUMBER_FOR_CARS_WITH_COLOR("registration_numbers_for_cars_with_colour"),
-    INVALID_INSTRUCTION("invalid_instruction");
+    INVALID_INSTRUCTION("invalid_instruction"),
+    EXIT("exit");
 
     private String value;
 

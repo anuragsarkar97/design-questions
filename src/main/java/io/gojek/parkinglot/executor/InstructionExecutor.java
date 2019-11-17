@@ -41,7 +41,8 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
                     parkingInformationService.executeInstruction(parkingLot, parts);
                 } else if (InstructionType.getInstructionByValue(command).equals(InstructionType.LEAVE)) {
                     parkingDeallocatorService.executeInstruction(parkingLot, parts);
-
+                } else if(InstructionType.getInstructionByValue(command).equals(InstructionType.EXIT)) {
+                    break;
                 }
 
                 // TODO:: Write other else if nd throw  exception
