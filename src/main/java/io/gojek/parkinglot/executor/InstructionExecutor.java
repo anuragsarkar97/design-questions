@@ -30,7 +30,7 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader,Voi
                     }
                     // TODO:: Write other else if nd throw  exception
                     else {
-                        // TODO: Throw exceptoip
+                        // TODO: Throw exception
                     }
 
 
