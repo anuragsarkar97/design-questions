@@ -24,6 +24,10 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader,Voi
                     if (InstructionType.getInstructionByValue(command).equals(InstructionType.CREATE)) {
                          parkingLot = (ParkingLot) parkingInitializeService.executeInstruction(parts);
                     }
+
+                    if (InstructionType.getInstructionByValue(command).equals(InstructionType.STATUS)) {
+
+                    }
                     // TODO:: Write other else if nd throw  exception
                     else {
                         // TODO: Throw exceptoip
