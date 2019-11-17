@@ -16,6 +16,8 @@ public class ParkingAllocatorService implements ParkingLotService<Void, String> 
     private Logger logger = Logger.getLogger(ParkingAllocatorService.class.getName());
 
     public Void executeInstruction(ParkingLot parkingLot, String... argument) {
+
+        Boolean slotFound = false;
         Color vehicleColor = Color.valueOf(argument[2]);
         String registrationNumber = argument[1];
         Car car = new Car(registrationNumber, vehicleColor);
@@ -27,8 +29,12 @@ public class ParkingAllocatorService implements ParkingLotService<Void, String> 
                 slot.setVehicle(car);
                 parkingLot.getColorSegmentMap().get(vehicleColor).put(registrationNumber, i);
                 logger.log(Level.INFO, "Allocated slot number: " + (i + 1));
+                slotFound= true;
                 break;
             }
+        }
+        if (!slotFound) {
+            System.out.println("Sorry, parking lot is full");
         }
         return null;
     }
