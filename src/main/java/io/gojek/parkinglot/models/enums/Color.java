@@ -4,5 +4,17 @@ public enum Color {
     White,
     Black,
     Blue,
-    Red;
+    Red,
+    InvalidColor;
+
+
+    public static Color getColorByValue(String argument) {
+        for (Color color : Color.values()) {
+            if (color.name().equals(argument)) {
+                return color;
+            }
+        }
+        return InvalidColor;
+    }
+
 }
