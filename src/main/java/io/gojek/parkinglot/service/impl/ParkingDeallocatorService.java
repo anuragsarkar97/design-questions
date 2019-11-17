@@ -28,7 +28,7 @@ public class ParkingDeallocatorService implements ParkingLotService<Void, String
             for(Map.Entry<String, Integer> entry : registrationSlotMap.entrySet()) {
                 if(Integer.parseInt(slotNumber)-1 == entry.getValue()) {
                     registrationSlotMap.remove(entry.getKey());
-                    logger.log(Level.INFO, "Slot number " + (entry.getValue()+1)+  " is free" );
+                    System.out.println("Slot number " + (entry.getValue()+1)+  " is free" );
                 }
             }
         });
