@@ -28,7 +28,7 @@ public class ParkingAllocatorService implements ParkingLotService<Void, String> 
                 slot.setStatus(SlotStatus.OCCUPIED);
                 slot.setVehicle(car);
                 parkingLot.getColorSegmentMap().get(vehicleColor).put(registrationNumber, i);
-                logger.log(Level.INFO, "Allocated slot number: " + (i + 1));
+                System.out.println("Allocated slot number: " + (i + 1));
                 slotFound= true;
                 break;
             }

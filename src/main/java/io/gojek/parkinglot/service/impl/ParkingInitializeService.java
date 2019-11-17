@@ -19,7 +19,9 @@ public class ParkingInitializeService implements ParkingLotService<ParkingLot, S
             //        Try moving this to validation
         }
         Integer parkingLotSize = Integer.valueOf(argument[1]);
-        return new ParkingLot(parkingLotSize);
+        ParkingLot parkingLot = new ParkingLot(parkingLotSize);
+        System.out.println("Created a parking lot with " + parkingLot.getSlots().size() + " slots");
+        return parkingLot;
     }
 
 //    public Void executeInstruction(Integer instruction) {
