@@ -6,19 +6,28 @@ import io.gojek.parkinglot.models.Slot;
 import io.gojek.parkinglot.models.enums.Color;
 import io.gojek.parkinglot.models.enums.SlotStatus;
 import io.gojek.parkinglot.service.ParkingLotService;
-import io.gojek.parkinglot.validator.impl.InstructionValidator;
 
+import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ParkingAllocatorService implements ParkingLotService<Void, String> {
 
-    Logger logger = Logger.getLogger(ParkingAllocatorService.class.getName());
+    private Logger logger = Logger.getLogger(ParkingAllocatorService.class.getName());
 
     public Void executeInstruction(ParkingLot parkingLot, String... argument) {
-        Car car = new Car(argument[1], Color.valueOf(argument[2]));
-        for(Slot slot : parkingLot.getSlots()) {
+        Color vehicleColor = Color.valueOf(argument[2]);
+        String registrationNumber = argument[1];
+        Car car = new Car(registrationNumber, vehicleColor);
+        List<Slot> slots = parkingLot.getSlots();
+        for (int i = 0; i < slots.size(); i++) {
+            Slot slot = slots.get(i);
             if (SlotStatus.FREE.equals(slot.getStatus())) {
-
+                slot.setStatus(SlotStatus.OCCUPIED);
+                slot.setVehicle(car);
+                parkingLot.getColorSegmentMap().get(vehicleColor).put(registrationNumber, i);
+                logger.log(Level.INFO, "Allocated slot number: {}", i);
+                break;
             }
         }
         return null;

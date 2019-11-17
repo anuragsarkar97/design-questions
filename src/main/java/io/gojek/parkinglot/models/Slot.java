@@ -10,9 +10,12 @@ public  class Slot {
 
     private SlotType slotType;
 
+    private Vehicle vehicle;
+
     public Slot() {
         this.status = SlotStatus.FREE;
         this.slotType = SlotType.FOUR_WHEELER;
+        this.vehicle = null;
     }
 
     public SlotStatus getStatus() {
@@ -29,6 +32,14 @@ public  class Slot {
 
     public void setSlotType(SlotType slotType) {
         this.slotType = slotType;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 }
 
