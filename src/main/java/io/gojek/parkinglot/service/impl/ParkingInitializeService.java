@@ -5,28 +5,20 @@ import io.gojek.parkinglot.service.ParkingLotService;
 
 import java.util.logging.Logger;
 
-public class ParkingInitializeService implements ParkingLotService<ParkingLot, String> {
+public class ParkingInitializeService implements ParkingLotService<Void, String> {
 
     Logger logger = Logger.getLogger(ParkingInitializeService.class.getName());
 
-    public ParkingLot executeInstruction(ParkingLot parkingLot, String... argument) {
-        return null;
-    }
-
-    public ParkingLot executeInstruction(String... argument) {
+    public Void executeInstruction(ParkingLot parkingLot, String... argument) {
         if (argument.length != 2) {
             //TODO :: Invalid instruction and throw error
             //        Try moving this to validation
         }
         Integer parkingLotSize = Integer.valueOf(argument[1]);
-        ParkingLot parkingLot = new ParkingLot(parkingLotSize);
+        ParkingLot newParkingLot = new ParkingLot(parkingLotSize);
+        parkingLot.setColorSegmentMap(newParkingLot.getColorSegmentMap());
+        parkingLot.setSlots(newParkingLot.getSlots());
         System.out.println("Created a parking lot with " + parkingLot.getSlots().size() + " slots");
-        return parkingLot;
+        return null;
     }
-
-//    public Void executeInstruction(Integer instruction) {
-//        new ParkingLot(instruction);
-//        return null;
-//    }
-
 }

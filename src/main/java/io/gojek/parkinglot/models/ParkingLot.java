@@ -32,6 +32,15 @@ public class ParkingLot {
         }
     }
 
+    public ParkingLot() {
+        Slot[] array = new Slot[1];
+        this.slots= Arrays.asList(array);
+        this.colorSegmentMap = new HashMap<Color, Map<String, Integer>>();
+        for(Color color: Color.values()) {
+            this.colorSegmentMap.put(color, new HashMap<String, Integer>());
+        }
+    }
+
     public Map<Color, Map<String, Integer>> getColorSegmentMap() {
         return colorSegmentMap;
     }

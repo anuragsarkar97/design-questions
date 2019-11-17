@@ -79,9 +79,4 @@ public class ParkingInformationService implements ParkingLotService<Void, String
         return null;
     }
 
-
-    @Override
-    public Void executeInstruction(String... argument) {
-        return null;
-    }
 }

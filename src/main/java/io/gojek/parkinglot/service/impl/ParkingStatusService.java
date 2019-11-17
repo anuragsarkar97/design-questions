@@ -26,7 +26,7 @@ public class ParkingStatusService implements ParkingLotService<Void, String>{
             System.out.println(String.join(" ",ParkingLotConstants.statusHeaders));
             for (Integer slotId: occupiedSlots) {
                 Slot slotInfo = slotsList.get(slotId);
-                System.out.println(slotId.toString() + " " +
+                System.out.println((slotId + 1) + " " +
                         slotInfo.getVehicle().getRegistrationNumber() + " " +
                         slotInfo.getVehicle().getColor().name());
             }
@@ -36,10 +36,6 @@ public class ParkingStatusService implements ParkingLotService<Void, String>{
             System.out.println("No vehicles found");
         }
 
-        return null;
-    }
-
-    public Void executeInstruction(String... argument) {
         return null;
     }
 }

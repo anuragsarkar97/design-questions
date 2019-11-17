@@ -38,8 +38,4 @@ public class ParkingAllocatorService implements ParkingLotService<Void, String> 
         }
         return null;
     }
-
-    public Void executeInstruction(String... argument) {
-        return null;
-    }
 }

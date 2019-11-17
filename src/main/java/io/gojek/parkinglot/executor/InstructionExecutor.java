@@ -20,7 +20,6 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
 
 
 
-    ParkingLot parkingLot = null;
 
     public Void execute(BufferedReader bufferReader) {
         Integer lineNumber = 0;
@@ -30,19 +29,19 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
         serviceMap.put(InstructionType.SLOT_NUMBER_FOR_REGISTRATION_NUMBER, parkingInformationService);
         serviceMap.put(InstructionType.REGISTRATION_NUMBER_FOR_CARS_WITH_COLOR, parkingInformationService);
         serviceMap.put(InstructionType.LEAVE, parkingDeallocatorService);
+        serviceMap.put(InstructionType.CREATE, parkingInitializeService);
 
 
 
         try {
             String instruction;
+            ParkingLot parkingLot = new ParkingLot();
+
             while ((instruction = bufferReader.readLine()) != null) {
                 String[] parts = instruction.trim().split(" ");
                 String command = parts[0];
-                if (InstructionType.getInstructionByValue(command).equals(InstructionType.CREATE)) {
-                    parkingLot = (ParkingLot) parkingInitializeService.executeInstruction(parts);
-                }
-                else if (serviceMap.containsKey(InstructionType.getInstructionByValue(command))) {
-                    serviceMap.get(InstructionType.getInstructionByValue(command)).executeInstruction(parkingLot,parts);
+                if (serviceMap.containsKey(InstructionType.getInstructionByValue(command))) {
+                    serviceMap.get(InstructionType.getInstructionByValue(command)).executeInstruction(parkingLot, parts);
                 }
                 else if(InstructionType.getInstructionByValue(command).equals(InstructionType.EXIT)) {
                     break;
