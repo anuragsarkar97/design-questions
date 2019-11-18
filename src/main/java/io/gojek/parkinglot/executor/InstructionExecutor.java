@@ -26,6 +26,7 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
     ParkingLotService parkingDeallocatorService = new ParkingDeallocatorService();
     private HashMap<InstructionType, ParkingLotService> serviceMap = new HashMap<InstructionType, ParkingLotService>();
 
+    ParkingLot parkingLot = new ParkingLot();
 
     public Void execute(BufferedReader bufferReader) {
         Integer lineNumber = 0;
@@ -40,7 +41,7 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
 
         try {
             String instruction;
-            ParkingLot parkingLot = new ParkingLot();
+
 
             while ((instruction = bufferReader.readLine()) != null) {
                 String[] parts = instruction.trim().split(" ");
