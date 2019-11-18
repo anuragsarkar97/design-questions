@@ -1,6 +1,5 @@
 package io.gojek.parkinglot.executor;
 
-import io.gojek.parkinglot.costants.ParkingLotConstants;
 import io.gojek.parkinglot.models.ParkingLot;
 import io.gojek.parkinglot.models.enums.InstructionType;
 import io.gojek.parkinglot.service.ParkingLotService;
@@ -25,9 +24,7 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
     ParkingLotService parkingStatusService = new ParkingStatusService();
     ParkingLotService parkingInformationService = new ParkingInformationService();
     ParkingLotService parkingDeallocatorService = new ParkingDeallocatorService();
-    private  HashMap<InstructionType, ParkingLotService> serviceMap = new HashMap<InstructionType, ParkingLotService>();
-
-
+    private HashMap<InstructionType, ParkingLotService> serviceMap = new HashMap<InstructionType, ParkingLotService>();
 
 
     public Void execute(BufferedReader bufferReader) {
@@ -50,19 +47,16 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
                 String command = parts[0];
                 if (instructionValidator.validate(parkingLot, parts).equals(false)) {
                     continue;
-                }
-                else if (serviceMap.containsKey(InstructionType.getInstructionByValue(command))) {
+                } else if (serviceMap.containsKey(InstructionType.getInstructionByValue(command))) {
                     serviceMap.get(InstructionType.getInstructionByValue(command)).executeInstruction(parkingLot, parts);
-                }
-                else if(InstructionType.getInstructionByValue(command).equals(InstructionType.EXIT)) {
+                } else if (InstructionType.getInstructionByValue(command).equals(InstructionType.EXIT)) {
                     break;
-                }
-                else {
+                } else {
                     System.out.println(INVALID_COMMAND);
                 }
             }
         } catch (IOException e) {
-
+            System.out.println(e.getMessage());
         }
         return null;
     }

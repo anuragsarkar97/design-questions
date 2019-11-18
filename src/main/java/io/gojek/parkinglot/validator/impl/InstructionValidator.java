@@ -1,14 +1,10 @@
 package io.gojek.parkinglot.validator.impl;
 
-import io.gojek.parkinglot.ParkingLotApplication;
 import io.gojek.parkinglot.models.ParkingLot;
 import io.gojek.parkinglot.models.enums.Color;
 import io.gojek.parkinglot.models.enums.InstructionType;
 import io.gojek.parkinglot.models.enums.SlotStatus;
 import io.gojek.parkinglot.validator.ValidationInterface;
-
-import java.util.List;
-import java.util.logging.Logger;
 
 import static io.gojek.parkinglot.costants.ParkingLotConstants.INVALID_INPUT;
 import static io.gojek.parkinglot.costants.ParkingLotConstants.INVALID_SIZE;
@@ -30,7 +26,7 @@ public class InstructionValidator implements ValidationInterface<String, Parking
                     System.out.println("Invalid Input");
                     return false;
                 }
-                if (Integer.valueOf(instructions[1]) == 0) {
+                if (Integer.parseInt(instructions[1]) == 0) {
                     System.out.println(INVALID_SIZE);
                     return false;
                 }
@@ -52,21 +48,21 @@ public class InstructionValidator implements ValidationInterface<String, Parking
                     System.out.println(INVALID_INPUT);
                     return false;
                 }
-                if (Integer.valueOf(instructions[1]) > parkingLot.getSlots().size() || Integer.valueOf(instructions[1]) < 1) {
+                if (Integer.parseInt(instructions[1]) > parkingLot.getSlots().size() || Integer.parseInt(instructions[1]) < 1) {
                     System.out.println(INVALID_INPUT);
                 }
-                if (parkingLot.getSlots().get(Integer.valueOf(instructions[1])-1).getStatus().equals(SlotStatus.FREE)) {
+                if (parkingLot.getSlots().get(Integer.parseInt(instructions[1]) - 1).getStatus().equals(SlotStatus.FREE)) {
                     System.out.println("Slot is already free");
                 }
                 return true;
             case REGISTRATION_NUMBER_FOR_CARS_WITH_COLOR:
-                if (instructions.length != 2 || !(validColor(instructions[2]))) {
+                if (instructions.length != 2 || !(validColor(instructions[1]))) {
                     System.out.println(INVALID_INPUT);
                     return false;
                 }
                 return true;
             case SLOT_NUMBER_FOR_CARS_WITH_COLOR:
-                if (instructions.length != 2 || !(validColor(instructions[2]))) {
+                if (instructions.length != 2 || !(validColor(instructions[1]))) {
                     System.out.println(INVALID_INPUT);
                     return false;
                 }
@@ -79,10 +75,7 @@ public class InstructionValidator implements ValidationInterface<String, Parking
 
     private boolean validColor(String instruction) {
         Color color = Color.getColorByValue(instruction);
-        if (color.equals(Color.InvalidColor)) {
-            return false;
-        }
-        return true;
+        return !color.equals(Color.InvalidColor);
     }
 
     private boolean isNumeric(String instruction) {

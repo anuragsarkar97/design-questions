@@ -11,7 +11,7 @@ import java.util.List;
 
 import static io.gojek.parkinglot.costants.ParkingLotConstants.NO_VEHICLE_FOUND;
 
-public class ParkingStatusService implements ParkingLotService<Void, String>{
+public class ParkingStatusService implements ParkingLotService<Void, String> {
     public Void executeInstruction(ParkingLot parkingLot, String... argument) {
 
         List<Integer> occupiedSlots = new ArrayList<Integer>();
@@ -25,16 +25,14 @@ public class ParkingStatusService implements ParkingLotService<Void, String>{
         }
 
         if (occupiedSlots.size() > 0) {
-            System.out.println(String.join(" ",ParkingLotConstants.statusHeaders));
-            for (Integer slotId: occupiedSlots) {
+            System.out.println(String.join(" ", ParkingLotConstants.statusHeaders));
+            for (Integer slotId : occupiedSlots) {
                 Slot slotInfo = slotsList.get(slotId);
                 System.out.println((slotId + 1) + " " +
                         slotInfo.getVehicle().getRegistrationNumber() + " " +
                         slotInfo.getVehicle().getColor().name());
             }
-        }
-
-        else {
+        } else {
             System.out.println(NO_VEHICLE_FOUND);
         }
 
