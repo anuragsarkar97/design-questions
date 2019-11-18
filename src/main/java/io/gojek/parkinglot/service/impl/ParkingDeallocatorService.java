@@ -6,6 +6,9 @@ import io.gojek.parkinglot.service.ParkingLotService;
 
 import java.util.Map;
 
+import static io.gojek.parkinglot.costants.ParkingLotConstants.FREE_SPACE;
+import static io.gojek.parkinglot.costants.ParkingLotConstants.SLOT_NUMBER;
+
 public class ParkingDeallocatorService implements ParkingLotService<Void, String> {
 
 
@@ -23,7 +26,7 @@ public class ParkingDeallocatorService implements ParkingLotService<Void, String
             for (Map.Entry<String, Integer> entry : registrationSlotMap.entrySet()) {
                 if (Integer.parseInt(slotNumber) - 1 == entry.getValue()) {
                     registrationSlotMap.remove(entry.getKey());
-                    System.out.println("Slot number " + (entry.getValue() + 1) + " is free");
+                    System.out.println(SLOT_NUMBER + (entry.getValue() + 1) + FREE_SPACE);
                 }
             }
         });

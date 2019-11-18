@@ -10,6 +10,9 @@ import io.gojek.parkinglot.validator.ValidationInterface;
 import java.util.List;
 import java.util.logging.Logger;
 
+import static io.gojek.parkinglot.costants.ParkingLotConstants.INVALID_INPUT;
+import static io.gojek.parkinglot.costants.ParkingLotConstants.INVALID_SIZE;
+
 public class InstructionValidator implements ValidationInterface<String, ParkingLot, Boolean> {
 
 
@@ -28,7 +31,7 @@ public class InstructionValidator implements ValidationInterface<String, Parking
                     return false;
                 }
                 if (Integer.valueOf(instructions[1]) == 0) {
-                    System.out.println("Invalid size");
+                    System.out.println(INVALID_SIZE);
                     return false;
                 }
                 if (parkingLot.getSlots().size() != 0) {
@@ -46,11 +49,11 @@ public class InstructionValidator implements ValidationInterface<String, Parking
             case LEAVE:
                 if (instructions.length != 2
                         || !(isNumeric(instructions[1]))) {
-                    System.out.println("Invalid Input");
+                    System.out.println(INVALID_INPUT);
                     return false;
                 }
                 if (Integer.valueOf(instructions[1]) > parkingLot.getSlots().size() || Integer.valueOf(instructions[1]) < 1) {
-                    System.out.println("Invalid Input");
+                    System.out.println(INVALID_INPUT);
                 }
                 if (parkingLot.getSlots().get(Integer.valueOf(instructions[1])-1).getStatus().equals(SlotStatus.FREE)) {
                     System.out.println("Slot is already free");
@@ -58,13 +61,13 @@ public class InstructionValidator implements ValidationInterface<String, Parking
                 return true;
             case REGISTRATION_NUMBER_FOR_CARS_WITH_COLOR:
                 if (instructions.length != 2 || !(validColor(instructions[2]))) {
-                    System.out.println("Invalid Input");
+                    System.out.println(INVALID_INPUT);
                     return false;
                 }
                 return true;
             case SLOT_NUMBER_FOR_CARS_WITH_COLOR:
                 if (instructions.length != 2 || !(validColor(instructions[2]))) {
-                    System.out.println("Invalid Input");
+                    System.out.println(INVALID_INPUT);
                     return false;
                 }
                 return true;

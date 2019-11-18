@@ -9,6 +9,8 @@ import io.gojek.parkinglot.service.ParkingLotService;
 
 import java.util.List;
 
+import static io.gojek.parkinglot.costants.ParkingLotConstants.ALLOCATED_SPACE;
+
 public class ParkingAllocatorService implements ParkingLotService<Void, String> {
 
 
@@ -27,7 +29,7 @@ public class ParkingAllocatorService implements ParkingLotService<Void, String> 
                 slot.setStatus(SlotStatus.OCCUPIED);
                 slot.setVehicle(car);
                 parkingLot.getColorSegmentMap().get(vehicleColor).put(registrationNumber, i);
-                System.out.println("Allocated slot number: " + (i + 1));
+                System.out.println(ALLOCATED_SPACE + (i + 1));
                 slotFound = true;
                 break;
             }

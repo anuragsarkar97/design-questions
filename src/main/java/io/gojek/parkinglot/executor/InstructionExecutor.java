@@ -1,5 +1,6 @@
 package io.gojek.parkinglot.executor;
 
+import io.gojek.parkinglot.costants.ParkingLotConstants;
 import io.gojek.parkinglot.models.ParkingLot;
 import io.gojek.parkinglot.models.enums.InstructionType;
 import io.gojek.parkinglot.service.ParkingLotService;
@@ -10,6 +11,8 @@ import io.gojek.parkinglot.validator.impl.InstructionValidator;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.HashMap;
+
+import static io.gojek.parkinglot.costants.ParkingLotConstants.INVALID_COMMAND;
 
 /**
  * validates each instruction to business logic and executes.
@@ -55,7 +58,7 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
                     break;
                 }
                 else {
-                    System.out.println("Invalid Command found");
+                    System.out.println(INVALID_COMMAND);
                 }
             }
         } catch (IOException e) {

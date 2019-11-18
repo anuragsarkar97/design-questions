@@ -9,6 +9,8 @@ import io.gojek.parkinglot.service.ParkingLotService;
 import java.util.ArrayList;
 import java.util.List;
 
+import static io.gojek.parkinglot.costants.ParkingLotConstants.NO_VEHICLE_FOUND;
+
 public class ParkingStatusService implements ParkingLotService<Void, String>{
     public Void executeInstruction(ParkingLot parkingLot, String... argument) {
 
@@ -33,7 +35,7 @@ public class ParkingStatusService implements ParkingLotService<Void, String>{
         }
 
         else {
-            System.out.println("No vehicles found");
+            System.out.println(NO_VEHICLE_FOUND);
         }
 
         return null;

@@ -9,6 +9,8 @@ import io.gojek.parkinglot.service.ParkingLotService;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static io.gojek.parkinglot.costants.ParkingLotConstants.NOT_FOUND;
+
 public class ParkingInformationService implements ParkingLotService<Void, String>{
 
     private static final Map<InstructionType, Runnable> commands = new HashMap<>();
@@ -27,7 +29,7 @@ public class ParkingInformationService implements ParkingLotService<Void, String
             }
         }
         if (!carFound) {
-            System.out.println("Not found");
+            System.out.println(NOT_FOUND);
         }
     }
 

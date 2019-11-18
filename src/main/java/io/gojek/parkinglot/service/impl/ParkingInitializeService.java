@@ -3,6 +3,8 @@ package io.gojek.parkinglot.service.impl;
 import io.gojek.parkinglot.models.ParkingLot;
 import io.gojek.parkinglot.service.ParkingLotService;
 
+import static io.gojek.parkinglot.costants.ParkingLotConstants.CREATED_PARKING_LOT;
+
 public class ParkingInitializeService implements ParkingLotService<Void, String> {
 
 
@@ -15,7 +17,7 @@ public class ParkingInitializeService implements ParkingLotService<Void, String>
         ParkingLot newParkingLot = new ParkingLot(parkingLotSize);
         parkingLot.setColorSegmentMap(newParkingLot.getColorSegmentMap());
         parkingLot.setSlots(newParkingLot.getSlots());
-        System.out.println("Created a parking lot with " + parkingLot.getSlots().size() + " slots");
+        System.out.println(CREATED_PARKING_LOT + parkingLot.getSlots().size() + " slots");
         return null;
     }
 }
