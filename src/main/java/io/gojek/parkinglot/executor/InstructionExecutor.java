@@ -11,6 +11,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.HashMap;
 
+/**
+ * validates each instruction to business logic and executes.
+ */
 public class InstructionExecutor implements ExecutorInterface<BufferedReader, Void> {
 
     ValidationInterface instructionValidator = new InstructionValidator();
