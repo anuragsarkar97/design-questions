@@ -30,13 +30,6 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
 
     public Void execute(BufferedReader bufferReader) {
         Integer lineNumber = 0;
-        serviceMap.put(InstructionType.PARK, parkingAllocatorService);
-        serviceMap.put(InstructionType.STATUS, parkingStatusService);
-        serviceMap.put(InstructionType.SLOT_NUMBER_FOR_CARS_WITH_COLOR, parkingInformationService);
-        serviceMap.put(InstructionType.SLOT_NUMBER_FOR_REGISTRATION_NUMBER, parkingInformationService);
-        serviceMap.put(InstructionType.REGISTRATION_NUMBER_FOR_CARS_WITH_COLOR, parkingInformationService);
-        serviceMap.put(InstructionType.LEAVE, parkingDeallocatorService);
-        serviceMap.put(InstructionType.CREATE, parkingInitializeService);
 
 
         try {
@@ -45,20 +38,34 @@ public class InstructionExecutor implements ExecutorInterface<BufferedReader, Vo
 
             while ((instruction = bufferReader.readLine()) != null) {
                 String[] parts = instruction.trim().split(" ");
-                String command = parts[0];
-                if (instructionValidator.validate(parkingLot, parts).equals(false)) {
-                    continue;
-                } else if (serviceMap.containsKey(InstructionType.getInstructionByValue(command))) {
-                    serviceMap.get(InstructionType.getInstructionByValue(command)).executeInstruction(parkingLot, parts);
-                } else if (InstructionType.getInstructionByValue(command).equals(InstructionType.EXIT)) {
-                    break;
-                } else {
-                    System.out.println(INVALID_COMMAND);
-                }
+                executeInstruction(parkingLot, parts);
+
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
         return null;
+    }
+
+    public Void executeInstruction(ParkingLot parkingLot, String... parts) {
+
+        serviceMap.put(InstructionType.PARK, parkingAllocatorService);
+        serviceMap.put(InstructionType.STATUS, parkingStatusService);
+        serviceMap.put(InstructionType.SLOT_NUMBER_FOR_CARS_WITH_COLOR, parkingInformationService);
+        serviceMap.put(InstructionType.SLOT_NUMBER_FOR_REGISTRATION_NUMBER, parkingInformationService);
+        serviceMap.put(InstructionType.REGISTRATION_NUMBER_FOR_CARS_WITH_COLOR, parkingInformationService);
+        serviceMap.put(InstructionType.LEAVE, parkingDeallocatorService);
+        serviceMap.put(InstructionType.CREATE, parkingInitializeService);
+
+        String command = parts[0];
+        if (instructionValidator.validate(parkingLot, parts).equals(false)) {
+        } else if (serviceMap.containsKey(InstructionType.getInstructionByValue(command))) {
+            serviceMap.get(InstructionType.getInstructionByValue(command)).executeInstruction(parkingLot, parts);
+        } else if (InstructionType.getInstructionByValue(command).equals(InstructionType.EXIT)) {
+        } else {
+            System.out.println(INVALID_COMMAND);
+        }
+        return null;
+
     }
 }
