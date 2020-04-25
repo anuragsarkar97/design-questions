@@ -12,6 +12,9 @@ public  class Player {
     Board attackTracker = new Board(Tracker);
     int points = 17;
 
+    public Player(String name) {
+        this.name = name;
+    }
     // Mark the attcked positions in your map
     public  void attack(int row, int col, boolean attackStatus) {};
 

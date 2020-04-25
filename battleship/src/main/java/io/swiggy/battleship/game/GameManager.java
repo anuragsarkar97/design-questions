@@ -2,6 +2,9 @@ package io.swiggy.battleship.game;
 
 import io.swiggy.battleship.enums.Choice;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +14,7 @@ public class GameManager {
     Map<String, Game> games = new HashMap<String, Game>();
 
 
-    public void manageGames(Choice choice) {
+    public void manageGames(Choice choice) throws IOException {
         switch (choice.name()) {
             case "Resume":
                 if (true) { // if list of games is empty
@@ -29,13 +32,20 @@ public class GameManager {
                 _game.startWar();
 
             case "StartOver":
-                while (true) { // untill you get valid {
-
+                String gameName;
+                while (true) {
+                    System.out.println("Enter a name for your game");
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                    gameName = reader.readLine();
+                    if (games.containsKey(gameName)) {
+                        System.out.println("Dont act smart, choose a different name");
+                        continue;
+                    }
                     break;
                 }
 
-                Game game= new Game();
-                //insert into map with name
+                Game game = new Game();
+                games.put(gameName, game);
                 game.startWar();
 
 

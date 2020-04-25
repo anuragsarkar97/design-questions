@@ -20,13 +20,12 @@ public class GameLoop {
                 System.out.println("Invalid input");
                 continue;
             }
-
             switch (option) {
                 case 1:
-                    System.out.println("Staring a new games...");
+                    System.out.println("Staring a new game...");
                     break;
                 case 2:
-                    System.out.println("Staring existing game...");
+                    System.out.println("Staring one of the existing games...");
                     break;
                 default:
                     System.out.println("Invalid option");
