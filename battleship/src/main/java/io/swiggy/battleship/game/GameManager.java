@@ -1,6 +1,7 @@
 package io.swiggy.battleship.game;
 
 import io.swiggy.battleship.enums.GameChoice;
+import io.swiggy.battleship.enums.GameStatus;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -46,9 +47,12 @@ public class GameManager {
 
                 Game game = new Game();
                 games.put(gameName, game);
-                game.startWar();
-
-
+                GameStatus status = game.startWar();
+                if (status.equals(GameStatus.Finished)) {
+                    games.remove(gameName);
+                    System.out.println("test");
+                }
+                System.out.println("test");
             default:
                 break;
         }

@@ -46,9 +46,9 @@ public class Game {
                  winner = attacker;
                  break;
              }
-             
+
              if (defenderStatus) {
-                 System.out.println("Checkout your tracker cool isn't it");
+                 System.out.println("Checkout your tracker, cool isn't it");
              } else {
                  System.out.println("Aim properly you silly wanker");
              }
