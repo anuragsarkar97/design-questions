@@ -12,7 +12,7 @@ public class GameLoop {
     public void startGameLoop() throws IOException {
         GameManager gameManager = new GameManager();
         while (true) {
-            System.out.println("Please select from optino below \n" +
+            System.out.println("Please select from option below \n" +
                     "1. Start a new game \n" +
                     "2. Resume one of the previous games");
 
@@ -29,6 +29,8 @@ public class GameLoop {
                     break;
                 case 2:
                     System.out.println("Staring one of the existing games...");
+                    gameManager.manageGames(GameChoice.Resume);
+
                     break;
                 default:
                     System.out.println("Invalid option");

@@ -1,5 +1,6 @@
 package io.swiggy.battleship.game;
 
+import com.sun.deploy.util.StringUtils;
 import io.swiggy.battleship.enums.GameChoice;
 import io.swiggy.battleship.enums.GameStatus;
 
@@ -8,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class GameManager {
 
@@ -16,24 +18,30 @@ public class GameManager {
 
 
     public void manageGames(GameChoice choice) throws IOException {
+        String gameName;
         switch (choice.name()) {
             case "Resume":
-                if (true) { // if list of games is empty
-                    System.out.println("No games");
+                if (games.size() == 0) {
+                    System.out.println("Dont be silly. Start a new game!!");
+                    return;
                 }
-
-                while (true) {//untill you get a vaild name) {
-                    //Print Keys of map wait for buffer input
+                while (true) {
+                    System.out.println("Enter on of the games below");
+                    System.out.println(StringUtils.join(games.keySet(), "\n"));
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                     gameName = reader.readLine();
+                    if (!games.containsKey(gameName)) {
+                        System.out.println("Dont be silly!!!");
+                        continue;
+                    }
 
                     break;
 
                 }
-                String name = ""; // Get from buffer
-                Game _game = games.get(name);
+                Game _game = games.get(gameName);
                 _game.startWar();
 
             case "StartOver":
-                String gameName;
                 while (true) {
                     System.out.println("Enter a name for your game");
                     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
