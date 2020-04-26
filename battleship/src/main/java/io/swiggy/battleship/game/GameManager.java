@@ -1,5 +1,6 @@
 package io.swiggy.battleship.game;
 
+import com.sun.deploy.util.StringUtils;
 import io.swiggy.battleship.enums.GameChoice;
 import io.swiggy.battleship.enums.GameStatus;
 
@@ -8,8 +9,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.apache.commons.lang3.StringUtils;
 
 public class GameManager {
 
@@ -39,8 +38,12 @@ public class GameManager {
 
                 }
                 Game _game = games.get(gameName);
-                _game.startWar();
-
+                GameStatus _status = _game.startWar();
+                if (_status.equals(GameStatus.Finished)) {
+                    games.remove(gameName);
+                    System.out.println("test");
+                }
+                break;
             case "StartOver":
                 while (true) {
                     System.out.println("Enter a name for your game");
