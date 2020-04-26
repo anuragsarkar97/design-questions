@@ -2,21 +2,40 @@ package io.swiggy.battleship.executor.impl;
 
 import io.swiggy.battleship.enums.Instruction;
 import io.swiggy.battleship.executor.Executor;
+import io.swiggy.battleship.game.Board;
+import io.swiggy.battleship.game.Game;
 
 import java.util.Arrays;
 
 public class NewGameExecutor extends Executor {
+
 
     public NewGameExecutor() {
         this.setValidInstructions(Arrays.asList(Instruction.Attack, Instruction.SaveAndExit));
     }
     @Override
     public boolean validateInstruction(String instruction) {
-        return false;
+        String[] arguments = instruction.split(" ");
+        if (arguments.length != 2 ) {
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public void executeInstruction(String instruction) {
+    public void executeInstruction(String instruction) throws Exception {
+        Game game =
+                getGameManager().addNewGame(instruction.split(" ")[1]);
+        setCurrentGame(game);
+
+        String playerName = game.getTracker().getAttacker().getName();
+        Board shipArrangenent = game.getTracker().getAttacker().getShipArrangement();
+        Board attackTracker = game.getTracker().getAttacker().getAttackTracker();
+        System.out.println("Your Ship Arrangement");
+        shipArrangenent.showBoard();
+        System.out.println("Your attack tracker");
+        attackTracker.showBoard();
+        System.out.println("Hey " + playerName + ", Make a move");
 
     }
 }

@@ -7,14 +7,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
-public class ExecutorLoop {
+public class GameLoopExecutor {
 
-    public void executorLoop() throws Exception {
+    public void executeLoop() {
         ExecutorFactory executorFactory = new ExecutorFactory();
 
         // This line is hack to get valid instructions initially
         Executor executor = executorFactory.getExecutor(Instruction.SaveAndExit);
         while (true) {
+            System.out.println("your word is my command");
             try {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
                 String instructionString = reader.readLine();
@@ -22,15 +23,16 @@ public class ExecutorLoop {
                 Instruction instruction = Instruction.valueOf(instructionString.split(" ")[0]);
                 List<Instruction> validInstructions = executor.getValidInstructions();
                 if (!validInstructions.contains(instruction)) {
-                    throw new Exception();
+                    System.out.println("Invalid State for instruction");
+                    continue;
                 }
                 executor = executorFactory.getExecutor(instruction);
 
                 if (executor.validateInstruction(instructionString)) {
                     executor.executeInstruction(instructionString);
-                    //update valid instructions
                 }
             } catch (Exception e) {
+                System.out.println(e.getMessage());
                 continue;
             }
         }

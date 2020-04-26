@@ -1,80 +1,28 @@
 package io.swiggy.battleship.game;
 
-import com.sun.deploy.util.StringUtils;
-import io.swiggy.battleship.enums.GameChoice;
-import io.swiggy.battleship.enums.GameStatus;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
 public class GameManager {
 
 
-    Map<String, Game> games = new HashMap<String, Game>();
+    private Map<String, Game> games = new HashMap<String, Game>();
 
-
-    public void manageGames(GameChoice choice) throws IOException {
-        String gameName;
-        switch (choice.name()) {
-            case "Resume":
-                if (games.size() == 0) {
-                    System.out.println("Dont be silly. Start a new game!!");
-                    return;
-                }
-                while (true) {
-                    System.out.println("Enter on of the games below");
-                    System.out.println(StringUtils.join(games.keySet(), "\n"));
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-                     gameName = reader.readLine();
-                    if (!games.containsKey(gameName)) {
-                        System.out.println("Dont be silly!!!");
-                        continue;
-                    }
-
-                    break;
-
-                }
-                Game _game = games.get(gameName);
-                GameStatus _status = _game.startWar();
-                if (_status.equals(GameStatus.Finished)) {
-                    games.remove(gameName);
-                    System.out.println("test");
-                }
-                break;
-            case "StartOver":
-                while (true) {
-                    System.out.println("Enter a name for your game");
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-                    gameName = reader.readLine();
-                    if (games.containsKey(gameName)) {
-                        System.out.println("Dont act smart, choose a different name");
-                        continue;
-                    }
-                    break;
-                }
-
-                Game game = new Game();
-                games.put(gameName, game);
-                GameStatus status = game.startWar();
-                if (status.equals(GameStatus.Finished)) {
-                    games.remove(gameName);
-                    System.out.println("test");
-                }
-                System.out.println("test");
-            default:
-                break;
+    public Game addNewGame(String gameName) throws Exception {
+        if (games.containsKey(gameName)) {
+            throw new Exception("Game already exists and you know it");
         }
-
+        Game game = new Game();
+        game.setGameName(gameName);
+        games.put(gameName, game);
+        return game;
     }
 
-    public void endGame(String gameName) {
-        //delete from map
+    public Map<String, Game> getGames() {
+        return games;
     }
 
-    public void pauseGame(String gameName) {
-        //add to map
+    public void setGames(Map<String, Game> games) {
+        this.games = games;
     }
 }
