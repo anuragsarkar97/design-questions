@@ -16,7 +16,15 @@ public  class Player {
         this.name = name;
     }
     // Mark the attcked positions in your map
-    public  void attack(int row, int col, boolean attackStatus) {};
+    public  void attack(int row, int col, boolean attacked) {
+        int[][] trackerBoard = attackTracker.getBoard();
+        if (attacked) {
+            trackerBoard[row][col] = 1;
+        } else{
+            trackerBoard[row][col] = -1;
+        }
+        attackTracker.setBoard(trackerBoard);
+    };
 
     // Return if the position is attackable by opponent
     // ( not an already attacked position)
@@ -24,7 +32,16 @@ public  class Player {
     // update ship arrangement
     // return true if there is a ship in position (row, col)
     // reduce points by one if suffered
-    public  boolean sufferAttack(int row, int col) {return true;};
+    public  boolean sufferAttack(int row, int col) {
+        int[][] board = shipArrangement.getBoard();
+        if (board[row][col] == 0) {
+            return false;
+        }
+        points -= 1;
+        board[row][col] = -1;
+        shipArrangement.setBoard(board);
+        return true;
+    }
 
     public String getName() {
         return name;
