@@ -2,15 +2,14 @@ package io.swiggy.battleship.game;
 
 import io.swiggy.battleship.enums.GameStatus;
 import io.swiggy.battleship.players.Player;
+import io.swiggy.battleship.players.PlayerTracker;
 import io.swiggy.battleship.utils.InputUtil;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 public class Game {
-     Player attacker = new Player("Dilip");
-     Player defender = new Player("Anurag");
+     Player playerA = new Player("Dilip");
+     Player playerB = new Player("Anurag");
      Player winner = null;
+     PlayerTracker tracker = new PlayerTracker(playerA, playerB);
 
      public GameStatus startWar() {
          while (winner == null) {
@@ -20,16 +19,16 @@ public class Game {
              if (saveAndExit()) {
                  return GameStatus.SaveAndExit;
              }
-             while ( !attacker.getAttackTracker().validateAttack(row, col)) {
+             while ( !tracker.getAttacker().getAttackTracker().validateAttack(row, col)) {
                  System.out.println("Hey " +
-                         attacker.getName() + " enter position to attack");
+                         tracker.getAttacker().getName() + " enter position to attack");
                  // TODO: Print attack tracker
                  // Keep  getting row col from buffer and update them
                  System.out.println("Here is your board");
-                 attacker.getShipArrangement().showBoard();
+                 tracker.getAttacker().getShipArrangement().showBoard();
 
                  System.out.println("Here is your tracker");
-                 attacker.getAttackTracker().showBoard();
+                 tracker.getAttacker().getAttackTracker().showBoard();
                  try {
                      System.out.println("Select row");
                      row = InputUtil.scanInputOption();
@@ -40,10 +39,10 @@ public class Game {
                      continue;
                  }
              }
-             boolean defenderStatus = defender.sufferAttack(row, col);
-             attacker.attack(row, col, defenderStatus);
-             if (defender.getPoints() == 0) {
-                 winner = attacker;
+             boolean defenderStatus = tracker.getDefender().sufferAttack(row, col);
+             tracker.getAttacker().attack(row, col, defenderStatus);
+             if (tracker.getDefender().getPoints() == 0) {
+                 winner = tracker.getAttacker();
                  break;
              }
 
@@ -52,8 +51,8 @@ public class Game {
              } else {
                  System.out.println("Aim properly you silly wanker");
              }
-             attacker.getAttackTracker().showBoard();
-             swapTurns(attacker, defender);
+             tracker.getAttacker().getAttackTracker().showBoard();
+             tracker.swap();
 
          }
          System.out.println("Winner is " + winner.getName());
@@ -84,17 +83,5 @@ public class Game {
          }
     }
 
-    private void swapTurns(Player attacker, Player defender) {
-        Player tempDefender = new Player(defender.getName(), defender.getShipArrangement(), defender.getAttackTracker(), defender.getPoints());
-        defender.setAttackTracker(attacker.getAttackTracker());
-        defender.setName(attacker.getName());
-        defender.setPoints(attacker.getPoints());
-        defender.setShipArrangement(attacker.getShipArrangement());
-
-        attacker.setAttackTracker(tempDefender.getAttackTracker());
-        attacker.setName(tempDefender.getName());
-        attacker.setPoints(tempDefender.getPoints());
-        attacker.setShipArrangement(tempDefender.getShipArrangement());
-     }
 
 }

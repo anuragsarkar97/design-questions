@@ -23,6 +23,13 @@ public  class Player {
         this.points = points;
 
     }
+
+    public Player clone() {
+        return new Player(this.name, 
+        this.shipArrangement, 
+        this.attackTracker, 
+        this.points);
+    }
     // Mark the attcked positions in your map
     public  void attack(int row, int col, boolean attacked) {
         int[][] trackerBoard = attackTracker.getBoard();

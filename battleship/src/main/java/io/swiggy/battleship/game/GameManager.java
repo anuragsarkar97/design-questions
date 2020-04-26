@@ -1,6 +1,5 @@
 package io.swiggy.battleship.game;
 
-import com.sun.deploy.util.StringUtils;
 import io.swiggy.battleship.enums.GameChoice;
 import io.swiggy.battleship.enums.GameStatus;
 
@@ -9,7 +8,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class GameManager {
 
