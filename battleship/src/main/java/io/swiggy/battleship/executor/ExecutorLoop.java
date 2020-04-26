@@ -1,22 +1,37 @@
 package io.swiggy.battleship.executor;
 
+import io.swiggy.battleship.enums.Instruction;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 public class ExecutorLoop {
 
-    public void executorLoop() throws IOException {
+    public void executorLoop() throws Exception {
         ExecutorFactory executorFactory = new ExecutorFactory();
+
+        // This line is hack to get valid instructions initially
+        Executor executor = executorFactory.getExecutor(Instruction.SaveAndExit);
         while (true) {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            String instruction = reader.readLine();
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                String instructionString = reader.readLine();
 
-            Executor executor = executorFactory.getExecutor(instruction);
+                Instruction instruction = Instruction.valueOf(instructionString.split(" ")[0]);
+                List<Instruction> validInstructions = executor.getValidInstructions();
+                if (!validInstructions.contains(instruction)) {
+                    throw new Exception();
+                }
+                executor = executorFactory.getExecutor(instruction);
 
-            if (executor.validateInstruction(instruction)) {
-                executor.executeInstruction(instruction);
-                //update valid instructions
+                if (executor.validateInstruction(instructionString)) {
+                    executor.executeInstruction(instructionString);
+                    //update valid instructions
+                }
+            } catch (Exception e) {
+                continue;
             }
         }
     }

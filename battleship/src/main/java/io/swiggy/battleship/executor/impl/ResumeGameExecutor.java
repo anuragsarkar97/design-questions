@@ -5,19 +5,18 @@ import io.swiggy.battleship.executor.Executor;
 
 import java.util.Arrays;
 
-public class GameInstructionExecutor extends Executor {
+public class ResumeGameExecutor extends Executor {
 
-    public GameInstructionExecutor() {
+    public ResumeGameExecutor() {
         this.setValidInstructions(Arrays.asList(Instruction.Attack, Instruction.SaveAndExit));
+    }
+    @Override
+    public boolean validateInstruction(String instruction) {
+        return false;
     }
 
     @Override
     public void executeInstruction(String instruction) {
 
-    }
-
-    @Override
-    public boolean validateInstruction(String instruction) {
-        return false;
     }
 }

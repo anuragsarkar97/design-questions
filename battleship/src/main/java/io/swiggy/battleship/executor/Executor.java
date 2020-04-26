@@ -9,9 +9,9 @@ public abstract class Executor {
 
     private List<Instruction> validInstructions;
 
-    public abstract boolean validateInstruction();
+    public abstract boolean validateInstruction(String inctruction);
 
-    public abstract void executeInstruction();
+    public abstract void executeInstruction(String instruction);
 
 
     public List<Instruction> getValidInstructions() {
