@@ -25,21 +25,34 @@ public class Game {
                          attacker.getName() + " enter position to attack");
                  // TODO: Print attack tracker
                  // Keep  getting row col from buffer and update them
+                 System.out.println("Here is your board");
+                 attacker.getShipArrangement().showBoard();
+
+                 System.out.println("Here is your tracker");
+                 attacker.getAttackTracker().showBoard();
                  try {
                      System.out.println("Select row");
                      row = InputUtil.scanInputOption();
                      System.out.println("Select column");
                      col = InputUtil.scanInputOption();
                  } catch (Exception e) {
+                     System.out.println("Dont be silly");
                      continue;
                  }
              }
-             attacker.attack(row, col, defender.sufferAttack(row, col));
+             boolean defenderStatus = defender.sufferAttack(row, col);
+             attacker.attack(row, col, defenderStatus);
              if (defender.getPoints() == 0) {
                  winner = attacker;
                  break;
              }
-             // swap turns
+             
+             if (defenderStatus) {
+                 System.out.println("Checkout your tracker cool isn't it");
+             } else {
+                 System.out.println("Aim properly you silly wanker");
+             }
+             attacker.getAttackTracker().showBoard();
              swapTurns(attacker, defender);
 
          }

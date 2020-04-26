@@ -46,5 +46,6 @@ public class Board {
 
     public void showBoard(){
         System.out.println(Arrays.deepToString(this.board).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
+        System.out.println("-----------------------------");
     }
 }
