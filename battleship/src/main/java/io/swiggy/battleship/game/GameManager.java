@@ -1,6 +1,6 @@
 package io.swiggy.battleship.game;
 
-import io.swiggy.battleship.enums.Choice;
+import io.swiggy.battleship.enums.GameChoice;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,7 +14,7 @@ public class GameManager {
     Map<String, Game> games = new HashMap<String, Game>();
 
 
-    public void manageGames(Choice choice) throws IOException {
+    public void manageGames(GameChoice choice) throws IOException {
         switch (choice.name()) {
             case "Resume":
                 if (true) { // if list of games is empty

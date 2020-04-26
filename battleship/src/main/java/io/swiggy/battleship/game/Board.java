@@ -10,6 +10,8 @@ public class Board {
     public Board(BoardType boardType) {
         this.board = new int[10][10];
         if (boardType.name().equals("fleet")) {
+            //XXX: Ransomly filling 17 1's
+            //TODO: Take input from buffer or file
             for (int i = 0 ; i< 17; i++) {
                 Random rand = new Random();
                 int row = rand.nextInt(10);
