@@ -37,8 +37,10 @@ public class Game {
              attacker.attack(row, col, defender.sufferAttack(row, col));
              if (defender.getPoints() == 0) {
                  winner = attacker;
+                 break;
              }
              // swap turns
+             swapTurns(attacker, defender);
 
          }
          System.out.println("Winner is " + winner.getName());
@@ -70,10 +72,16 @@ public class Game {
     }
 
     private void swapTurns(Player attacker, Player defender) {
-         // i guess this type of swap will not work
-         Player temp = defender;
-         defender = attacker;
-         attacker = temp;
+        Player tempDefender = new Player(defender.getName(), defender.getShipArrangement(), defender.getAttackTracker(), defender.getPoints());
+        defender.setAttackTracker(attacker.getAttackTracker());
+        defender.setName(attacker.getName());
+        defender.setPoints(attacker.getPoints());
+        defender.setShipArrangement(attacker.getShipArrangement());
+
+        attacker.setAttackTracker(tempDefender.getAttackTracker());
+        attacker.setName(tempDefender.getName());
+        attacker.setPoints(tempDefender.getPoints());
+        attacker.setShipArrangement(tempDefender.getShipArrangement());
      }
 
 }

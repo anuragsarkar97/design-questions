@@ -15,6 +15,14 @@ public  class Player {
     public Player(String name) {
         this.name = name;
     }
+
+    public Player(String name, Board shipArrangement, Board attackTracker, int points) {
+        this.name = name;
+        this.shipArrangement = shipArrangement;
+        this.attackTracker = attackTracker;
+        this.points = points;
+
+    }
     // Mark the attcked positions in your map
     public  void attack(int row, int col, boolean attacked) {
         int[][] trackerBoard = attackTracker.getBoard();
