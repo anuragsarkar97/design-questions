@@ -17,6 +17,7 @@ public class NewGameExecutor extends Executor {
     public boolean validateInstruction(String instruction) {
         String[] arguments = instruction.split(" ");
         if (arguments.length != 2 ) {
+            System.out.println("I need exactly two arguments and you know it!!");
             return false;
         }
         return true;

@@ -5,6 +5,7 @@ import io.swiggy.battleship.enums.Instruction;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.List;
 
 public class GameLoopExecutor {
@@ -13,15 +14,18 @@ public class GameLoopExecutor {
         ExecutorFactory executorFactory = new ExecutorFactory();
 
         // This line is hack to get valid instructions initially
-        Executor executor = executorFactory.getExecutor(Instruction.SaveAndExit);
+        Executor executor ;
+
+        List<Instruction> validInstructions = Arrays.asList(Instruction.NewGame);
         while (true) {
-            System.out.println("your word is my command");
+            System.out.println("Choose one of the actions below");
+            validInstructions.forEach(System.out::println);
             try {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
                 String instructionString = reader.readLine();
 
+
                 Instruction instruction = Instruction.valueOf(instructionString.split(" ")[0]);
-                List<Instruction> validInstructions = executor.getValidInstructions();
                 if (!validInstructions.contains(instruction)) {
                     System.out.println("Invalid State for instruction");
                     continue;
@@ -30,7 +34,10 @@ public class GameLoopExecutor {
 
                 if (executor.validateInstruction(instructionString)) {
                     executor.executeInstruction(instructionString);
+                } else {
+                    continue;
                 }
+                validInstructions = executor.getValidInstructions();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 continue;
