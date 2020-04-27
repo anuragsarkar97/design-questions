@@ -23,7 +23,7 @@ public class GameInstructionExecutor extends Executor {
             return false;
         }
         try {
-            if(getCurrentGame().getTracker().getDefender().getShipArrangement().isShipPlaced() && getCurrentGame().getTracker().getAttacker().getShipArrangement().isShipPlaced()) {
+            if(!getCurrentGame().getTracker().getDefender().getShipArrangement().isShipPlaced() || !getCurrentGame().getTracker().getAttacker().getShipArrangement().isShipPlaced()) {
                 return false;
             }
             int row = Integer.parseInt(arguments[1]);
