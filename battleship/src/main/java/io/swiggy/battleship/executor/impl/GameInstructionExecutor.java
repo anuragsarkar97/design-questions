@@ -52,9 +52,9 @@ public class GameInstructionExecutor extends Executor {
         String playerName = game.getTracker().getAttacker().getName();
         Board shipArrangenent = game.getTracker().getAttacker().getShipArrangement();
         Board attackTracker = game.getTracker().getAttacker().getAttackTracker();
-        System.out.println("Your Ship Arrangement");
+        System.out.println("Hey " + playerName + " Your Ship Arrangement");
         shipArrangenent.showBoard();
-        System.out.println("Your attack tracker");
+        System.out.println("Hey " + playerName + " Your attack tracker");
         attackTracker.showBoard();
         System.out.println("Hey " + playerName + ", Make a move");
     }

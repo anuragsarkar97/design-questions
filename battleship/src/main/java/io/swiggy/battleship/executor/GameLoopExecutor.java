@@ -12,8 +12,6 @@ public class GameLoopExecutor {
 
     public void executeLoop() {
         ExecutorFactory executorFactory = new ExecutorFactory();
-
-        // This line is hack to get valid instructions initially
         Executor executor ;
 
         List<Instruction> validInstructions = Arrays.asList(Instruction.NewGame);

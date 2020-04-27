@@ -1,7 +1,9 @@
 package io.swiggy.battleship.game;
 
 import io.swiggy.battleship.enums.BoardType;
+import io.swiggy.battleship.utils.FileUtil;
 
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -10,21 +12,11 @@ public class Board {
 
     private boolean shipPlaced;
 
-    public Board(BoardType boardType) {
+    public Board(BoardType boardType)  {
         this.board = new int[10][10];
         if (boardType.name().equals("Fleet")) {
-            //XXX: Ransomly filling 17 1's
-            //TODO: Take input from buffer or file
-            for (int i = 0 ; i< 17; i++) {
-                Random rand = new Random();
-                int row = rand.nextInt(10);
-                int col = rand.nextInt(10);
-                if (this.board[row][col] == 1 ){
-                    i = i-1;
-                    continue;
-                }
-                this.board[row][col] = 1;
-            }
+            FileUtil util =  new FileUtil();
+            this.board = util.getBoard();
         }
     }
 
