@@ -8,9 +8,9 @@ import static io.swiggy.battleship.enums.BoardType.Tracker;
 public  class Player {
 
     String name;
-    Board shipArrangement = new Board(Fleet);
-    Board attackTracker = new Board(Tracker);
-    int points = 17;
+    Board shipArrangement = new Board();
+    Board attackTracker = new Board();
+    int points = shipArrangement.getTotalPoints();
 
     public Player(String name) {
         this.name = name;

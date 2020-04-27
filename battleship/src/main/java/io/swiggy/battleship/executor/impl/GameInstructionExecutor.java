@@ -23,8 +23,12 @@ public class GameInstructionExecutor extends Executor {
             return false;
         }
         try {
+            if(!getCurrentGame().getTracker().getDefender().getShipArrangement().isShipPlaced() || getCurrentGame().getTracker().getAttacker().getShipArrangement().isShipPlaced()) {
+                return false;
+            }
             int row = Integer.parseInt(arguments[1]);
             int col = Integer.parseInt(arguments[2]);
+
         } catch (NumberFormatException e) {
             throw new Exception("Ivalid argumets provided. input numbers");
         }
@@ -50,10 +54,10 @@ public class GameInstructionExecutor extends Executor {
         }
         Game game = getCurrentGame();
         String playerName = game.getTracker().getAttacker().getName();
-        Board shipArrangenent = game.getTracker().getAttacker().getShipArrangement();
+        Board shipArrangement = game.getTracker().getAttacker().getShipArrangement();
         Board attackTracker = game.getTracker().getAttacker().getAttackTracker();
         System.out.println("Hey " + playerName + " Your Ship Arrangement");
-        shipArrangenent.showBoard();
+        shipArrangement.showBoard();
         System.out.println("Hey " + playerName + " Your attack tracker");
         attackTracker.showBoard();
         System.out.println("Hey " + playerName + ", Make a move");

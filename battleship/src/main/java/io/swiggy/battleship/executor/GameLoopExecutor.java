@@ -3,18 +3,17 @@ package io.swiggy.battleship.executor;
 import io.swiggy.battleship.enums.Instruction;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class GameLoopExecutor {
 
     public void executeLoop() {
         ExecutorFactory executorFactory = new ExecutorFactory();
-        Executor executor ;
+        Executor executor;
 
-        List<Instruction> validInstructions = Arrays.asList(Instruction.NewGame);
+        List<Instruction> validInstructions = Collections.singletonList(Instruction.NewGame);
         while (true) {
             System.out.println("Choose one of the actions below");
             validInstructions.forEach(System.out::println);
@@ -32,10 +31,10 @@ public class GameLoopExecutor {
 
                 if (executor.validateInstruction(instructionString)) {
                     executor.executeInstruction(instructionString);
+                    validInstructions = executor.getValidInstructions();
                 } else {
-                    continue;
+                    System.out.println("Instruction not valid ");
                 }
-                validInstructions = executor.getValidInstructions();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 continue;

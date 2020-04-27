@@ -11,7 +11,7 @@ public class NewGameExecutor extends Executor {
 
 
     public NewGameExecutor() {
-        this.setValidInstructions(Arrays.asList(Instruction.Attack, Instruction.SaveAndExit));
+        this.setValidInstructions(Arrays.asList(Instruction.PlaceShip, Instruction.SaveAndExit));
     }
     @Override
     public boolean validateInstruction(String instruction) {
