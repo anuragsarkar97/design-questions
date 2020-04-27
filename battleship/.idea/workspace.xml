@@ -3,29 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="15586d89-9a94-4f32-8f40-b0698649d213" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/BattleShipApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/BattleShipApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/enums/Ships.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/enums/Ships.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/executor/ExecutorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/executor/ExecutorFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/executor/GameLoopExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/executor/GameLoopExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/executor/impl/GameInstructionExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/executor/impl/GameInstructionExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/executor/impl/NewGameExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/executor/impl/NewGameExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/executor/impl/PlaceShipExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/executor/impl/PlaceShipExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/game/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/players/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/BattleShipApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/BattleShipApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/enums/BoardType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/enums/BoardType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/enums/GameChoice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/enums/GameStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/enums/GameStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/enums/Ships.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/enums/Ships.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/GameLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/GameLoop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/GameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/players/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/players/PlayerTracker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/players/PlayerTracker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/utils/InputUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/utils/InputUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,29 +108,29 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1587811079493" />
-    <state x="400" y="161" width="439" height="578" key="#xdebugger.evaluate" timestamp="1588002035487">
+    <state x="400" y="161" width="439" height="578" key="#xdebugger.evaluate" timestamp="1588003172061">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="400" y="161" width="439" height="578" key="#xdebugger.evaluate/0.0.1440.900@0.0.1440.900" timestamp="1588002035487" />
-    <state width="1398" height="314" key="GridCell.Tab.0.bottom" timestamp="1588003110999">
+    <state x="400" y="161" width="439" height="578" key="#xdebugger.evaluate/0.0.1440.900@0.0.1440.900" timestamp="1588003172061" />
+    <state width="1398" height="386" key="GridCell.Tab.0.bottom" timestamp="1588003273058">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="314" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1588003110999" />
+    <state width="1398" height="386" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1588003273058" />
     <state width="1398" height="303" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1588001713781" />
-    <state width="1398" height="314" key="GridCell.Tab.0.center" timestamp="1588003110998">
+    <state width="1398" height="386" key="GridCell.Tab.0.center" timestamp="1588003273057">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="314" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1588003110997" />
+    <state width="1398" height="386" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1588003273057" />
     <state width="1398" height="303" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1588001713780" />
-    <state width="1398" height="314" key="GridCell.Tab.0.left" timestamp="1588003110997">
+    <state width="1398" height="386" key="GridCell.Tab.0.left" timestamp="1588003273056">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="314" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1588003110997" />
+    <state width="1398" height="386" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1588003273056" />
     <state width="1398" height="303" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1588001713779" />
-    <state width="1398" height="314" key="GridCell.Tab.0.right" timestamp="1588003110998">
+    <state width="1398" height="386" key="GridCell.Tab.0.right" timestamp="1588003273058">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="314" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1588003110998" />
+    <state width="1398" height="386" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1588003273058" />
     <state width="1398" height="303" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1588001713780" />
     <state x="378" y="212" width="683" height="476" key="find.popup" timestamp="1587996249894">
       <screen x="0" y="0" width="1440" height="900" />
@@ -178,8 +156,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/swiggy/battleship/game/Board.java</url>
-          <line>53</line>
+          <line>54</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/swiggy/battleship/executor/impl/PlaceShipExecutor.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/swiggy/battleship/game/Board.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

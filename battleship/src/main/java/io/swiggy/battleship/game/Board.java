@@ -48,6 +48,7 @@ public class Board {
             }
         }
         this.shipPlaced.add(ship);
+        this.showBoard();
     }
 
     public boolean validateShipPlacement(Ships ship, int XPos, int YPos, Alignment alignment) {
