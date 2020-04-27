@@ -8,6 +8,8 @@ import java.util.Random;
 public class Board {
     private int[][]  board;
 
+    private boolean shipPlaced;
+
     public Board(BoardType boardType) {
         this.board = new int[10][10];
         if (boardType.name().equals("Fleet")) {
@@ -42,6 +44,14 @@ public class Board {
 
     public void setBoard(int[][] board) {
         this.board = board;
+    }
+
+    public boolean isShipPlaced() {
+        return shipPlaced;
+    }
+
+    public void setShipPlaced(boolean shipPlaced) {
+        this.shipPlaced = shipPlaced;
     }
 
     public void showBoard(){
