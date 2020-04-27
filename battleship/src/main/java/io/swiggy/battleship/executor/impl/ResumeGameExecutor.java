@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class ResumeGameExecutor extends Executor {
 
     public ResumeGameExecutor() {
-        this.setValidInstructions(Arrays.asList(Instruction.Attack, Instruction.SaveAndExit));
+        this.setValidInstructions(Arrays.asList(Instruction.PlaceShip, Instruction.Attack, Instruction.SaveAndExit));
     }
     @Override
     public boolean validateInstruction(String instruction) {
