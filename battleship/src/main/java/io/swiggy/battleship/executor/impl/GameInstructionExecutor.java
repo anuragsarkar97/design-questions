@@ -24,6 +24,7 @@ public class GameInstructionExecutor extends Executor {
         }
         try {
             if(!getCurrentGame().getTracker().getDefender().getShipArrangement().isShipPlaced() || !getCurrentGame().getTracker().getAttacker().getShipArrangement().isShipPlaced()) {
+                System.out.println("All ships are not placed");
                 return false;
             }
             int row = Integer.parseInt(arguments[1]);
