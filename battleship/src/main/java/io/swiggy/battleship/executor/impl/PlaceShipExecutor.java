@@ -30,7 +30,7 @@ public class PlaceShipExecutor extends Executor {
                         && !getCurrentGame().getTracker().getAttacker().getShipArrangement().isShipPlaced();
             } else if ("DEFENDER".equals(whois)) {
                 return getCurrentGame().getTracker().getDefender().getShipArrangement().validateShipPlacement(ship, x, y, alignment)
-                        && getCurrentGame().getTracker().getDefender().getShipArrangement().isShipPlaced();
+                        && !getCurrentGame().getTracker().getDefender().getShipArrangement().isShipPlaced();
             } else {
                 return false;
             }
