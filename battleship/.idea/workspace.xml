@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="15586d89-9a94-4f32-8f40-b0698649d213" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/game/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/executor/impl/PlaceShipExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/executor/impl/PlaceShipExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/Board.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,25 +113,25 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="400" y="161" width="439" height="578" key="#xdebugger.evaluate/0.0.1440.900@0.0.1440.900" timestamp="1588003172061" />
-    <state width="1398" height="386" key="GridCell.Tab.0.bottom" timestamp="1588003273058">
+    <state width="1398" height="313" key="GridCell.Tab.0.bottom" timestamp="1588010789840">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="386" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1588003273058" />
+    <state width="1398" height="313" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1588010789840" />
     <state width="1398" height="303" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1588001713781" />
-    <state width="1398" height="386" key="GridCell.Tab.0.center" timestamp="1588003273057">
+    <state width="1398" height="313" key="GridCell.Tab.0.center" timestamp="1588010789839">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="386" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1588003273057" />
+    <state width="1398" height="313" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1588010789839" />
     <state width="1398" height="303" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1588001713780" />
-    <state width="1398" height="386" key="GridCell.Tab.0.left" timestamp="1588003273056">
+    <state width="1398" height="313" key="GridCell.Tab.0.left" timestamp="1588010789838">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="386" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1588003273056" />
+    <state width="1398" height="313" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1588010789838" />
     <state width="1398" height="303" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1588001713779" />
-    <state width="1398" height="386" key="GridCell.Tab.0.right" timestamp="1588003273058">
+    <state width="1398" height="313" key="GridCell.Tab.0.right" timestamp="1588010789840">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="386" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1588003273058" />
+    <state width="1398" height="313" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1588010789840" />
     <state width="1398" height="303" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1588001713780" />
     <state x="378" y="212" width="683" height="476" key="find.popup" timestamp="1587996249894">
       <screen x="0" y="0" width="1440" height="900" />

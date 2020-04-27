@@ -57,7 +57,7 @@ public class PlaceShipExecutor extends Executor {
                 System.out.println("input parameter is not correct. Please Try again");
             }
         } catch (Exception e) {
-            System.out.println("");
+            System.out.println(e.getMessage());
         }
     }
 }
