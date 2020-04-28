@@ -15,7 +15,6 @@ Game flow is as follow
 4. attack GOTO Step 4 till all ships of either player is wrecked GOTO Step 5
 5.  GOTO Step 1
 
-
 ## Assumption 
 
 1. There can be at max only one type of ship on the board.
@@ -34,6 +33,16 @@ Game flow is as follow
 
 1. Better logs and error handling response.
 2. Interactive selectors.
+3. Clean Argument Parser and Exception handling of extra spaces around instruction.
+
+## Build locally 
+
+1. If using Intellij -> run the project directly 
+2. mvn clean install && java -jar target/battleship-1.0-SNAPSHOT.jar
+
+## External Libraries Used
+
+1. commons-lang3-3.0 (for string utility)
 
 ## Command
 
@@ -46,3 +55,7 @@ SaveAndExit
 Attack ```X_pos``` ```Y_pos```
 
 PlaceShip ```PLAYER_TYPE``` ```SHIP_TYPE``` ```X_POS``` ```Y_POS``` ```ALIGNMENT```
+
+## Comments 
+
+please checkout resources/testgame for a sample game for testing.

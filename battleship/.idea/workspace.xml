@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15586d89-9a94-4f32-8f40-b0698649d213" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/game/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/BattleShipApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/BattleShipApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ships/testgame" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testgame" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/BattleShipApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/BattleShipApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/enums/Ships.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/enums/Ships.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/players/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +59,9 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="io.swiggy.battleship.players" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
   <component name="RunManager">

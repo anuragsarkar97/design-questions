@@ -2,6 +2,7 @@
 /Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/executor/impl/GameInstructionExecutor.java
 /Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/players/PlayerTracker.java
 /Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/utils/FileUtil.java
+/Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/enums/Alignment.java
 /Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/enums/BoardType.java
 /Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/executor/ExecutorFactory.java
 /Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/enums/GameStatus.java
@@ -14,6 +15,7 @@
 /Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/game/Game.java
 /Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/utils/InputUtil.java
 /Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/enums/Ships.java
+/Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/enums/PlayerType.java
 /Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/game/GameManager.java
 /Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/players/Player.java
 /Users/oyo/Desktop/personal projects/design-questions/battleship/src/main/java/io/swiggy/battleship/executor/GameLoopExecutor.java

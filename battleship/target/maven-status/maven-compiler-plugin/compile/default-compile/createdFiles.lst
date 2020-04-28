@@ -1,3 +1,5 @@
+io/swiggy/battleship/enums/Alignment.class
+io/swiggy/battleship/enums/PlayerType.class
 io/swiggy/battleship/enums/GameStatus.class
 io/swiggy/battleship/executor/GameLoopExecutor.class
 io/swiggy/battleship/enums/Instruction.class
