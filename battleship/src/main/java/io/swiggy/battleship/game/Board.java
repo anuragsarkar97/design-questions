@@ -62,12 +62,12 @@ public class Board {
             for (int i = YPos; i < YPos + sizeOfShip; i++) {
                 if (this.board[XPos][i] == 1) return false;
             }
-            return XPos >= 0 && XPos < 10 && YPos >= 0 && YPos + sizeOfShip-1 < 10;
+            return XPos >= 0 && XPos < this.boardSize && YPos >= 0 && YPos + sizeOfShip-1 < this.boardSize;
         } else if (Alignment.Vertical.equals(alignment)) {
             for (int i = XPos; i < XPos + sizeOfShip; i++) {
                 if (this.board[i][YPos] == 1) return false;
             }
-            return XPos >= 0 && XPos + sizeOfShip-1 < 10 && YPos >= 0 && YPos < 10;
+            return XPos >= 0 && XPos + sizeOfShip-1 < this.boardSize && YPos >= 0 && YPos < this.boardSize;
         } else {
             return false;
         }

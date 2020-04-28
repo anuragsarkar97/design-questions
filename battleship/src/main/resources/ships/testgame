@@ -1,0 +1,63 @@
+NewGame 1
+PlaceShip ATTACKER Cruiser 7 0 Vertical
+PlaceShip ATTACKER Submarine 7 1 Vertical
+PlaceShip ATTACKER Battleship 5 3 Horizontal
+PlaceShip ATTACKER Carrier 0 0 Horizontal
+PlaceShip ATTACKER Destroyer 7 2 Vertical
+PlaceShip DEFENDER Destroyer 7 2 Vertical
+PlaceShip DEFENDER Carrier 0 5 Horizontal
+PlaceShip DEFENDER Battleship 5 3 Horizontal
+PlaceShip DEFENDER Submarine 1 4 Vertical
+PlaceShip DEFENDER Cruiser 7 0 Vertical
+Attack 1 1
+Attack 1 2
+Attack 3 3
+Attack 1 5
+Attack 2 2
+Attack 9 8
+Attack 1 0
+Attack 3 6
+Attack 2 6
+Attack 5 4
+Attack 0 1
+Attack 0 1
+Attack 0 2
+Attack 0 2
+Attack 0 3
+Attack 0 3
+Attack 0 4
+Attack 0 4
+Attack 0 5
+Attack 0 5
+Attack 9 1
+Attack 7 0
+Attack 4 7
+Attack 8 0
+Attack 0 9
+Attack 9 0
+Attack 1 7
+Attack 1 7
+Attack 1 8
+Attack 1 9
+Attack 1 9
+Attack 2 7
+Attack 7 1
+Attack 7 1
+Attack 7 2
+Attack 7 2
+Attack 7 3
+Attack 8 1
+Attack 7 3
+Attack 7 7
+Attack 9 1
+Attack 6 9
+Attack 8 2
+Attack 2 3
+Attack 0 0
+Attack 8 2
+Attack 5 3
+Attack 5 3
+Attack 5 4
+Attack 5 5
+Attack 5 5
+Attack 5 6
