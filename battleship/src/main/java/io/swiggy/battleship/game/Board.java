@@ -3,7 +3,9 @@ package io.swiggy.battleship.game;
 import io.swiggy.battleship.enums.Alignment;
 import io.swiggy.battleship.enums.Ships;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Board {
 
@@ -11,7 +13,7 @@ public class Board {
 
     private int boardSize = 10;
 
-    private Set<Ships> shipPlaced;
+    private Map<Ships, Boolean> shipPlaced;
 
     static Map<Ships, Integer> availableShips = new HashMap<>();
 
@@ -25,7 +27,7 @@ public class Board {
 
     public Board() {
         this.board = new int[this.boardSize][this.boardSize];
-        this.shipPlaced = new HashSet<>();
+        this.shipPlaced = new HashMap<>();
     }
 
     public int getTotalPoints() {
@@ -47,12 +49,12 @@ public class Board {
                 this.board[i][YPos] = 1;
             }
         }
-        this.shipPlaced.add(ship);
+        this.shipPlaced.put(ship, true);
         this.showBoard();
     }
 
     public boolean validateShipPlacement(Ships ship, int XPos, int YPos, Alignment alignment) {
-        if (this.shipPlaced.contains(ship)) {
+        if (this.shipPlaced.get(ship) != null) {
             return false;
         }
         Integer sizeOfShip = availableShips.get(ship);
@@ -60,12 +62,12 @@ public class Board {
             for (int i = YPos; i < YPos + sizeOfShip; i++) {
                 if (this.board[XPos][i] == 1) return false;
             }
-            return XPos >= 0 && XPos < 10 && YPos >= 0 && YPos + sizeOfShip < 10;
+            return XPos >= 0 && XPos < 10 && YPos >= 0 && YPos + sizeOfShip-1 < 10;
         } else if (Alignment.Vertical.equals(alignment)) {
             for (int i = XPos; i < XPos + sizeOfShip; i++) {
                 if (this.board[i][YPos] == 1) return false;
             }
-            return XPos >= 0 && XPos + sizeOfShip < 10 && YPos >= 0 && YPos < 10;
+            return XPos >= 0 && XPos + sizeOfShip-1 < 10 && YPos >= 0 && YPos < 10;
         } else {
             return false;
         }

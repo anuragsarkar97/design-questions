@@ -2,6 +2,7 @@ package io.swiggy.battleship.executor.impl;
 
 import io.swiggy.battleship.enums.Alignment;
 import io.swiggy.battleship.enums.Instruction;
+import io.swiggy.battleship.enums.PlayerType;
 import io.swiggy.battleship.enums.Ships;
 import io.swiggy.battleship.executor.Executor;
 
@@ -25,10 +26,10 @@ public class PlaceShipExecutor extends Executor {
             int x = Integer.parseInt(splitInstruction[3]);
             int y = Integer.parseInt(splitInstruction[4]);
             Alignment alignment = Alignment.valueOf(splitInstruction[5]);
-            if ("ATTACKER".equals(whois)) {
+            if (PlayerType.ATTACKER.name().equals(whois)) {
                 return getCurrentGame().getTracker().getAttacker().getShipArrangement().validateShipPlacement(ship, x, y, alignment)
                         && !getCurrentGame().getTracker().getAttacker().getShipArrangement().isShipPlaced();
-            } else if ("DEFENDER".equals(whois)) {
+            } else if (PlayerType.DEFENDER.name().equals(whois)) {
                 return getCurrentGame().getTracker().getDefender().getShipArrangement().validateShipPlacement(ship, x, y, alignment)
                         && !getCurrentGame().getTracker().getDefender().getShipArrangement().isShipPlaced();
             } else {
