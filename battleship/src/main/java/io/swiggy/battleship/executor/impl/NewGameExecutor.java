@@ -26,6 +26,7 @@ public class NewGameExecutor extends Executor {
 
     @Override
     public void executeInstruction(String instruction) throws Exception {
+        setGameFinished(false);
         Game game =
                 getGameManager().addNewGame(instruction.split(" ")[1]);
         setCurrentGame(game);

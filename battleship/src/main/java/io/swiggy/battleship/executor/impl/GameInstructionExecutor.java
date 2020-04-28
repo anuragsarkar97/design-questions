@@ -51,6 +51,7 @@ public class GameInstructionExecutor extends Executor {
             gamesMap.remove(getCurrentGame().getGameName());
             manager.setGames(gamesMap);
             setGameManager(manager);
+            setGameFinished(true);
             return;
         }
         Game game = getCurrentGame();

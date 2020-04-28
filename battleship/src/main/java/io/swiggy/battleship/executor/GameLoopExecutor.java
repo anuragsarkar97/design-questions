@@ -4,6 +4,7 @@ import io.swiggy.battleship.enums.Instruction;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -32,6 +33,10 @@ public class GameLoopExecutor {
                 if (executor.validateInstruction(instructionString)) {
                     executor.executeInstruction(instructionString);
                     validInstructions = executor.getValidInstructions();
+                    if (Executor.isGameFinished()) {
+                        validInstructions = Arrays.asList(Instruction.NewGame, Instruction.ResumeGame);
+                        Executor.setGameFinished(false);
+                    }
                 } else {
                     System.out.println("Instruction not valid ");
                 }

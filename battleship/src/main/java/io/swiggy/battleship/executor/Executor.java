@@ -15,6 +15,8 @@ public abstract class Executor {
 
     private static GameManager gameManager = new GameManager();
 
+    private static boolean gameFinished = false;
+
     public abstract boolean validateInstruction(String inctruction) throws Exception;
 
     public abstract void executeInstruction(String instruction) throws Exception;
@@ -42,5 +44,13 @@ public abstract class Executor {
 
     public static void setGameManager(GameManager gameManager) {
         Executor.gameManager = gameManager;
+    }
+
+    public static boolean isGameFinished() {
+        return gameFinished;
+    }
+
+    public static void setGameFinished(boolean gameFinished) {
+        Executor.gameFinished = gameFinished;
     }
 }
