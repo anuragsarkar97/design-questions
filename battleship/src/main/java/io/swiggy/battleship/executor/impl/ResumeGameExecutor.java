@@ -20,6 +20,8 @@ public class ResumeGameExecutor extends Executor {
         }
         String gameName = arguments[1];
         if (!getGameManager().getGames().containsKey(gameName)) {
+            System.out.println("Game does not exist . Please Choose one of the following games");
+            getGameManager().getGames().keySet().forEach(System.out::println);
             return false;
         }
         return true;
