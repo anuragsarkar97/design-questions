@@ -7,8 +7,8 @@ import io.swiggy.battleship.utils.InputUtil;
 
 public class Game {
      private String gameName;
-     private Player playerA = new Player("Dilip");
-     private Player playerB = new Player("Anurag");
+     private Player playerA = new Player("Player 1"); // name is used for vis purpose can actually take input form
+     private Player playerB = new Player("Player 2");
      private Player winner = null;
      private PlayerTracker tracker = new PlayerTracker(playerA, playerB);
 

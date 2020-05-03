@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15586d89-9a94-4f32-8f40-b0698649d213" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/BattleShipApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/BattleShipApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ships/testgame" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testgame" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/BattleShipApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/BattleShipApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/enums/Ships.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/enums/Ships.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/game/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/swiggy/battleship/players/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/swiggy/battleship/game/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -45,6 +41,9 @@
     </option>
     <option name="jreName" value="1.8" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="1b1JUeOqoF0Cs7LFoLnwWz5TFD4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -55,6 +54,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="Lombok plugin" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -126,25 +126,25 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="400" y="161" width="439" height="578" key="#xdebugger.evaluate/0.0.1440.900@0.0.1440.900" timestamp="1588003172061" />
-    <state width="1398" height="445" key="GridCell.Tab.0.bottom" timestamp="1588065802782">
+    <state width="1398" height="386" key="GridCell.Tab.0.bottom" timestamp="1588087793770">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="445" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1588065802782" />
+    <state width="1398" height="386" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1588087793770" />
     <state width="1398" height="235" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1588062921583" />
-    <state width="1398" height="445" key="GridCell.Tab.0.center" timestamp="1588065802781">
+    <state width="1398" height="386" key="GridCell.Tab.0.center" timestamp="1588087793769">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="445" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1588065802781" />
+    <state width="1398" height="386" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1588087793769" />
     <state width="1398" height="235" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1588062921581" />
-    <state width="1398" height="445" key="GridCell.Tab.0.left" timestamp="1588065802781">
+    <state width="1398" height="386" key="GridCell.Tab.0.left" timestamp="1588087793768">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="445" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1588065802781" />
+    <state width="1398" height="386" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1588087793768" />
     <state width="1398" height="235" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1588062921580" />
-    <state width="1398" height="445" key="GridCell.Tab.0.right" timestamp="1588065802782">
+    <state width="1398" height="386" key="GridCell.Tab.0.right" timestamp="1588087793769">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="445" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1588065802782" />
+    <state width="1398" height="386" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1588087793769" />
     <state width="1398" height="235" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1588062921582" />
     <state x="378" y="212" width="683" height="476" key="find.popup" timestamp="1587996249894">
       <screen x="0" y="0" width="1440" height="900" />
